@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MasMotret Pricelist</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#e3c29d;
+overflow-x:hidden;
+color:#4b3425;
+position:relative;
+}
+
+/* ORNAMEN */
+
+.daun{
+position:fixed;
+z-index:0;
+pointer-events:none;
+opacity:.1}
+
+.daun-kiri-atas{
+top:0;
+left:0;
+width:130px;
+}
+
+.daun-kanan-atas{
+top:0;
+right:0;
+width:130px;
+}
+
+.daun-kiri-bawah{
+bottom:0;
+left:0;
+width:180px;
+}
+
+.daun-kanan-bawah{
+bottom:0;
+right:0;
+width:180px;
+}
+
+/* WRAPPER */
+
+.wrapper{
+position:relative;
+z-index:2;
+padding:20px;
+max-width:900px;
+margin:auto;
+}
+
+/* LOGO */
+
+.logo{
+display:flex;
+justify-content:center;
+margin-top:-17px;
+margin-bottom:15px;
+}
+
+.logo img{
+width:600px;
+max-width:100%;
+}
+
+/* TITLE */
+
+.title{
+text-align:center;
+margin-bottom:25px;
+}
+
+.title h1{
+font-size:34px;
+font-weight:700;
+letter-spacing:2px;
+}
+
+.title p{
+font-size:14px;
+opacity:.8;
+}
+
+/* MENU */
+
+.menu-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:12px;
+margin-bottom:35px;
+}
+
+.menu-btn{
+background:#f7941d;
+color:white;
+text-decoration:none;
+padding:12px;
+border-radius:40px;
+font-size:13px;
+font-weight:600;
+text-align:center;
+transition:.3s;
+}
+
+.menu-btn:hover{
+transform:translateY(-3px);
+}
+
+/* SECTION */
+
+.section{
+margin-bottom:40px;
+}
+
+.section-title{
+text-align:center;
+font-size:26px;
+font-weight:700;
+margin-bottom:20px;
+}
+
+/* CARD */
+
+.package-card{
+background:white;
+border-radius:20px;
+padding:20px;
+margin-bottom:18px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.package-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:10px;
+flex-wrap:nowrap;
+}
+
+.package-name{
+font-size:20px;
+font-weight:700;
+}
+
+.package-price{
+white-space:nowrap;
+font-size:18px;
+font-weight:700;
+color:#f7941d;
+}
+
+.package-card ul{
+padding-left:18px;
+margin-bottom:15px;
+}
+
+.package-card li{
+margin-bottom:6px;
+font-size:14px;
+}
+
+.select-package{
+width:100%;
+padding:12px;
+border:none;
+background:#f7941d;
+color:white;
+font-weight:600;
+border-radius:12px;
+cursor:pointer;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.menu-grid{
+grid-template-columns:repeat(3,1fr);
+}
+
+.menu-btn{
+font-size:11px;
+padding:10px 5px;
+}
+
+.section-title{
+font-size:22px;
+}
+
+.package-name{
+font-size:18px;
+}
+
+.package-price{
+font-size:16px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ORNAMEN -->
+
+<img src="./assets/daun-kiri-atas.png" class="daun daun-kiri-atas">
+<img src="assets/daun-kanan-atas.png" class="daun daun-kanan-atas">
+<img src="assets/daun-kiri-bawah.png" class="daun daun-kiri-bawah">
+<img src="assets/daun-kanan-bawah.png" class="daun daun-kanan-bawah">
+
+<div class="wrapper">
+
+<div class="logo">
+<img src="./assets/logo.png">
+</div>
+
+<div class="title">
+<h1>PRICE LIST</h1>
+<p>Pilih paket yang sesuai kebutuhan Anda</p>
+</div>
+
+<div class="menu-grid">
+
+<a href="#wedding" class="menu-btn">WEDDING</a>
+
+<a href="#engagement" class="menu-btn">ENGAGEMENT</a>
+
+<a href="#akad" class="menu-btn">AKAD</a>
+
+<a href="#khitanan" class="menu-btn">KHITANAN</a>
+
+<a href="#aqiqah" class="menu-btn">AQIQAH</a>
+
+<a href="#studio" class="menu-btn">STUDIO</a>
+
+</div>
+
+<!-- WEDDING -->
+
+<section id="wedding" class="section">
+
+<h2 class="section-title">WEDDING PHOTOGRAPHY</h2>
+
+<div class="package-card">
+
+<div class="package-header">
+<div class="package-name">STANDARD</div>
+<div class="package-price">Rp 800.000</div>
+</div>
+
+<ul>
+<li>4 Jam</li>
+<li>Free Editing</li>
+<li>40 Foto + Album Magnetik</li>
+<li>Bingkai 10R</li>
+<li>File via Google Drive</li>
+</ul>
+
+<label>
+<input type="radio" name="paket" value="800000" data-paket="Wedding Standard">
+ Pilih Paket
+</label>
+
+</div>
+
+<div class="package-card">
+
+<div class="package-header">
+<div class="package-name">PREMIUM</div>
+<div class="package-price">Rp 1.800.000</div>
+</div>
+
+<ul>
+<li>10 Jam</li>
+<li>Free Editing</li>
+<li>80 Foto + Album Magnetik</li>
+<li>Bingkai 12R</li>
+<li>File via Google Drive</li>
+</ul>
+
+<label>
+<input type="radio" name="paket" value="1800000" data-paket="Wedding Premium">
+ Pilih Paket
+</label>
+
+</div>
+
+<div class="package-card">
+
+<div class="package-header">
+<div class="package-name">GOLD</div>
+<div class="package-price">Rp 2.500.000</div>
+</div>
+
+<ul>
+<li>Full Day</li>
+<li>Free Editing</li>
+<li>120 Foto + Album Magnetik</li>
+<li>Bingkai 18R</li>
+<li>File via Google Drive</li>
+</ul>
+
+<label>
+<input type="radio" name="paket" value="2500000" data-paket="Wedding Gold">
+ Pilih Paket
+</label>
+
+</div>
+
+</section>
+
+<!-- ENGAGEMENT -->
+
+<section id="engagement" class="section">
+
+<h2 class="section-title">ENGAGEMENT PHOTOGRAPHY</h2>
+
+<div class="package-card">
+
+<div class="package-header">
+<div class="package-name">ENGAGEMENT PACKAGE</div>
+<div class="package-price">Rp 500.000</div>
+</div>
+
+<ul>
+<li>Full Day</li>
+<li>Free Editing</li>
+<li>40 Foto + Album</li>
+<li>File via Google Drive</li>
+</ul>
+
+<label>
+<input type="radio" name="paket" value="500000" data-paket="Engagement Package">
+ Pilih Paket
+</label>
+
+</div>
+
+</section>
+
+<!-- AKAD -->
+
+<section id="akad" class="section">
+
+<h2 class="section-title">AKAD PHOTOGRAPHY</h2>
+
+<div class="package-card">
+
+<div class="package-header">
+<div class="package-name">AKAD PACKAGE</div>
+<div class="package-price">Rp 600.000</div>
+</div>
+
+<ul>
+<li>Full Day</li>
+<li>Free Editing</li>
+<li>40 Foto + Album</li>
+<li>File via Google Drive</li>
+</ul>
+
+<label>
+<input type="radio" name="paket" value="600000" data-paket="Akad Package">
+ Pilih Paket
+</label>
+
+</div>
+
+</section>
+
+<!-- KHITANAN -->
+
+<section id="khitanan" class="section">
+
+<h2 class="section-title">KHITANAN PHOTOGRAPHY</h2>
+
+<div class="package-card">
+
+<div class="package-header">
+<div class="package-name">STANDARD</div>
+<div class="package-price">Rp 500.000</div>
+</div>
+
+<ul>
+<li>2 Jam</li>
+<li>Free Editing</li>
+<li>40 Foto + Album Magnetik</li>
+<li>Bingkai 10R</li>
+<li>File via Google Drive</li>
+</ul>
+
+<label>
+<input type="radio" name="paket" value="500000" data-paket="Khitanan Standard">
+ Pilih Paket
+</label>
+
+</div>
+
+<div class="package-card">
+
+<div class="package-header">
+<div class="package-name">PREMIUM</div>
+<div class="package-price">Rp 1.000.000</div>
+</div>
+
+<ul>
+<li>4 Jam</li>
+<li>Free Editing</li>
+<li>80 Foto + Album Magnetik</li>
+<li>Bingkai 12R</li>
+<li>File via Google Drive</li>
+</ul>
+
+<label>
+<input type="radio" name="paket" value="1000000" data-paket="Khitanan Premium">
+ Pilih Paket
+</label>
+
+</div>
+
+<div class="package-card">
+
+<div class="package-header">
+<div class="package-name">GOLD</div>
+<div class="package-price">Rp 1.500.000</div>
+</div>
+
+<ul>
+<li>Full Day</li>
+<li>Free Editing</li>
+<li>120 Foto + Album Magnetik</li>
+<li>Bingkai 16R</li>
+<li>File via Google Drive</li>
+</ul>
+
+<label>
+<input type="radio" name="paket" value="1500000" data-paket="Khitanan Gold">
+ Pilih Paket
+</label>
+
+</div>
+
+</section>
+
+<!-- AQIQAH -->
+
+<section id="aqiqah" class="section">
+
+<h2 class="section-title">AQIQAH PHOTOGRAPHY</h2>
+
+<div class="package-card">
+
+<div class="package-header">
+<div class="package-name">STANDARD</div>
+<div class="package-price">Rp 500.000</div>
+</div>
+
+<ul>
+<li>2 Jam</li>
+<li>Free Editing</li>
+<li>40 Foto + Album Biasa</li>
+<li>Bingkai 10R</li>
+<li>File via Google Drive</li>
+</ul>
+
+<label>
+<input type="radio" name="paket" value="500000" data-paket="Aqiqah Standard">
+ Pilih Paket
+</label>
+
+</div>
+
+<div class="package-card">
+
+<div class="package-header">
+<div class="package-name">PREMIUM</div>
+<div class="package-price">Rp 800.000</div>
+</div>
+
+<ul>
+<li>4 Jam</li>
+<li>Free Editing</li>
+<li>40 Foto + Album Magnetik</li>
+<li>Bingkai 12R</li>
+<li>File via Google Drive</li>
+</ul>
+
+<label>
+<input type="radio" name="paket" value="800000" data-paket="Aqiqah Premium">
+ Pilih Paket
+</label>
+
+</div>
+
+<div class="package-card">
+
+<div class="package-header">
+<div class="package-name">GOLD</div>
+<div class="package-price">Rp 1.300.000</div>
+</div>
+
+<ul>
+<li>Full Day</li>
+<li>Free Editing</li>
+<li>80 Foto + Album Magnetik</li>
+<li>Bingkai 16R</li>
+<li>File via Google Drive</li>
+</ul>
+
+<label>
+<input type="radio" name="paket" value="1300000" data-paket="Aqiqah Gold">
+ Pilih Paket
+</label>
+
+</div>
+
+</section>
+
+<!-- STUDIO -->
+
+<section id="studio" class="section">
+
+<h2 class="section-title">SELF PHOTO STUDIO</h2>
+
+<div class="package-card">
+
+<div class="package-header">
+<div class="package-name">BESTIE</div>
+<div class="package-price">Rp 30.000</div>
+</div>
+
+<ul>
+<li>1 - 2 Orang</li>
+<li>10 Menit</li>
+<li>Free Editing</li>
+<li>File via Google Drive</li>
+<li>Free Kupon</li>
+</ul>
+
+<label>
+<input type="radio" name="paket" value="30000" data-paket="Studio Bestie" data-type="bestie">
+ Pilih Paket
+</label>
+
+</div>
+
+<div class="package-card">
+
+<div class="package-header">
+<div class="package-name">SQUAD</div>
+<div class="package-price">Rp 60.000</div>
+</div>
+
+<ul>
+<li>3 - 5 Orang</li>
+<li>15 Menit</li>
+<li>Free Editing</li>
+<li>File via Google Drive</li>
+<li>Free Kupon</li>
+</ul>
+
+<label>
+<input type="radio" name="paket" value="60000" data-paket="Studio Squad" data-type="squad">
+ Pilih Paket
+</label>
+
+</div>
+
+<div class="package-card">
+
+<h3 style="margin-bottom:15px;">Tambahan Orang</h3>
+
+<select id="extraPeople" style="width:100%;padding:12px;border-radius:10px;">
+<option value="0">Tidak Ada</option>
+</select>
+
+<br><br>
+
+<h3 style="margin-bottom:15px;">Tambahan Waktu</h3>
+
+<select id="extraTime" style="width:100%;padding:12px;border-radius:10px;">
+<option value="0">0 Menit</option>
+<option value="10000">+5 Menit</option>
+<option value="20000">+10 Menit</option>
+<option value="30000">+15 Menit</option>
+<option value="40000">+20 Menit</option>
+<option value="50000">+25 Menit</option>
+<option value="60000">+30 Menit</option>
+</select>
+
+</div>
+
+</section>
+
+<!-- TOTAL -->
+
+<div style="height:120px;"></div>
+
+<div id="stickyTotal"
+style="
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+background:white;
+padding:15px;
+box-shadow:0 -5px 20px rgba(0,0,0,.1);
+z-index:999;
+">
+
+<div style="
+display:flex;
+justify-content:space-between;
+align-items:center;
+max-width:900px;
+margin:auto;
+">
+
+<div>
+
+<div style="font-size:13px;">TOTAL ESTIMASI</div>
+
+<div id="totalHarga"
+style="
+font-size:22px;
+font-weight:700;
+color:#f7941d;
+">
+Rp 0
+</div>
+
+</div>
+
+<button
+onclick="kirimWhatsApp()"
+style="
+background:#25D366;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:12px;
+font-weight:600;
+cursor:pointer;
+">
+Pesan Sekarang </button>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function formatRupiah(number){
+return new Intl.NumberFormat('id-ID').format(number);
+}
+
+const extraPeople=document.getElementById("extraPeople");
+const extraTime=document.getElementById("extraTime");
+const totalHarga=document.getElementById("totalHarga");
+
+function updateExtraPeople(){
+
+const studio=document.querySelector(
+'input[name="paket"]:checked'
+);
+
+extraPeople.innerHTML='';
+
+let option=document.createElement('option');
+option.value=0;
+option.textContent='Tidak Ada';
+extraPeople.appendChild(option);
+
+if(!studio) return;
+
+if(studio.dataset.type==="bestie"){
+
+[
+[15000,'+1 Orang'],
+[25000,'+2 Orang']
+].forEach(item=>{
+
+let opt=document.createElement('option');
+opt.value=item[0];
+opt.textContent=item[1];
+extraPeople.appendChild(opt);
+
+});
+
+}
+
+if(studio.dataset.type==="squad"){
+
+for(let i=1;i<=6;i++){
+
+let opt=document.createElement('option');
+opt.value=i*10000;
+opt.textContent='+'+i+' Orang';
+
+extraPeople.appendChild(opt);
+
+}
+
+}
+
+}
+
+
+function hitungTotal(){
+
+let total=0;
+
+const selected =
+document.querySelector('input[name="paket"]:checked');
+
+if(selected){
+total += parseInt(selected.value);
+}
+
+total+=parseInt(extraPeople.value||0);
+total+=parseInt(extraTime.value||0);
+
+totalHarga.innerHTML='Rp '+formatRupiah(total);
+
+}
+
+document.querySelectorAll('input[type="radio"]')
+.forEach(el=>{
+
+el.addEventListener('change',()=>{
+
+updateExtraPeople();
+hitungTotal();
+
+});
+
+});
+
+extraPeople.addEventListener('change',hitungTotal);
+extraTime.addEventListener('change',hitungTotal);
+
+function kirimWhatsApp(){
+
+let selected =
+document.querySelector('input[name="paket"]:checked');
+
+if(!selected){
+alert("Silakan pilih paket terlebih dahulu.");
+return;
+}
+
+let paket = selected.dataset.paket;
+
+let emoji = "📸";
+
+if(paket.includes("Wedding")) emoji = "👰";
+if(paket.includes("Engagement")) emoji = "💍";
+if(paket.includes("Akad")) emoji = "🤍";
+if(paket.includes("Khitanan")) emoji = "👦";
+if(paket.includes("Aqiqah")) emoji = "👶";
+if(paket.includes("Studio")) emoji = "📷";
+
+let total = totalHarga.innerText;
+
+let tambahan = "";
+
+if(selected.dataset.type){
+
+let orangText =
+extraPeople.options[extraPeople.selectedIndex].text;
+
+let waktuText =
+extraTime.options[extraTime.selectedIndex].text;
+
+tambahan =
+`\nTambahan Orang: ${orangText}
+Tambahan Waktu: ${waktuText}`;
+}
+
+let pesan = `Halo MasMotret 👋
+
+Saya ingin memesan:
+${emoji}${paket}
+${tambahan}
+
+💰Total Estimasi:
+${total}
+
+Mohon informasi lebih lanjut.
+
+Terima kasih 😁🙏.`;
+
+window.open(
+'https://wa.me/6285724129496?text='+
+encodeURIComponent(pesan),
+'_blank'
+);
+
+}
+
+
+</script>
+
+</body>
+</html>
