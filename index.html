@@ -104,7 +104,7 @@ opacity:.8;
 
 .menu-grid{
 display:grid;
-grid-template-columns:repeat(3,1fr);
+grid-template-columns:repeat(5,1fr);
 gap:12px;
 margin-bottom:35px;
 }
@@ -194,7 +194,7 @@ cursor:pointer;
 @media(max-width:768px){
 
 .menu-grid{
-grid-template-columns:repeat(3,1fr);
+grid-template-columns:repeat(5,1fr);
 }
 
 .menu-btn{
@@ -250,8 +250,6 @@ font-size:16px;
 <a href="#khitanan" class="menu-btn">KHITANAN</a>
 
 <a href="#aqiqah" class="menu-btn">AQIQAH</a>
-
-<a href="#studio" class="menu-btn">STUDIO</a>
 
 </div>
 
@@ -533,83 +531,6 @@ font-size:16px;
 
 </div>
 
-</section>
-
-<!-- STUDIO -->
-
-<section id="studio" class="section">
-
-<h2 class="section-title">SELF PHOTO STUDIO</h2>
-
-<div class="package-card">
-
-<div class="package-header">
-<div class="package-name">BESTIE</div>
-<div class="package-price">Rp 30.000</div>
-</div>
-
-<ul>
-<li>1 - 2 Orang</li>
-<li>10 Menit</li>
-<li>Free Editing</li>
-<li>File via Google Drive</li>
-<li>Free Kupon</li>
-</ul>
-
-<label>
-<input type="radio" name="paket" value="30000" data-paket="Studio Bestie" data-type="bestie">
- Pilih Paket
-</label>
-
-</div>
-
-<div class="package-card">
-
-<div class="package-header">
-<div class="package-name">SQUAD</div>
-<div class="package-price">Rp 60.000</div>
-</div>
-
-<ul>
-<li>3 - 5 Orang</li>
-<li>15 Menit</li>
-<li>Free Editing</li>
-<li>File via Google Drive</li>
-<li>Free Kupon</li>
-</ul>
-
-<label>
-<input type="radio" name="paket" value="60000" data-paket="Studio Squad" data-type="squad">
- Pilih Paket
-</label>
-
-</div>
-
-<div class="package-card">
-
-<h3 style="margin-bottom:15px;">Tambahan Orang</h3>
-
-<select id="extraPeople" style="width:100%;padding:12px;border-radius:10px;">
-<option value="0">Tidak Ada</option>
-</select>
-
-<br><br>
-
-<h3 style="margin-bottom:15px;">Tambahan Waktu</h3>
-
-<select id="extraTime" style="width:100%;padding:12px;border-radius:10px;">
-<option value="0">0 Menit</option>
-<option value="10000">+5 Menit</option>
-<option value="20000">+10 Menit</option>
-<option value="30000">+15 Menit</option>
-<option value="40000">+20 Menit</option>
-<option value="50000">+25 Menit</option>
-<option value="60000">+30 Menit</option>
-</select>
-
-</div>
-
-</section>
 
 <!-- TOTAL -->
 
@@ -675,61 +596,11 @@ function formatRupiah(number){
 return new Intl.NumberFormat('id-ID').format(number);
 }
 
-const extraPeople=document.getElementById("extraPeople");
-const extraTime=document.getElementById("extraTime");
-const totalHarga=document.getElementById("totalHarga");
-
-function updateExtraPeople(){
-
-const studio=document.querySelector(
-'input[name="paket"]:checked'
-);
-
-extraPeople.innerHTML='';
-
-let option=document.createElement('option');
-option.value=0;
-option.textContent='Tidak Ada';
-extraPeople.appendChild(option);
-
-if(!studio) return;
-
-if(studio.dataset.type==="bestie"){
-
-[
-[15000,'+1 Orang'],
-[25000,'+2 Orang']
-].forEach(item=>{
-
-let opt=document.createElement('option');
-opt.value=item[0];
-opt.textContent=item[1];
-extraPeople.appendChild(opt);
-
-});
-
-}
-
-if(studio.dataset.type==="squad"){
-
-for(let i=1;i<=6;i++){
-
-let opt=document.createElement('option');
-opt.value=i*10000;
-opt.textContent='+'+i+' Orang';
-
-extraPeople.appendChild(opt);
-
-}
-
-}
-
-}
-
+const totalHarga = document.getElementById("totalHarga");
 
 function hitungTotal(){
 
-let total=0;
+let total = 0;
 
 const selected =
 document.querySelector('input[name="paket"]:checked');
@@ -738,10 +609,8 @@ if(selected){
 total += parseInt(selected.value);
 }
 
-total+=parseInt(extraPeople.value||0);
-total+=parseInt(extraTime.value||0);
-
-totalHarga.innerHTML='Rp '+formatRupiah(total);
+totalHarga.innerHTML =
+'Rp ' + formatRupiah(total);
 
 }
 
@@ -750,15 +619,11 @@ document.querySelectorAll('input[type="radio"]')
 
 el.addEventListener('change',()=>{
 
-updateExtraPeople();
 hitungTotal();
 
 });
 
 });
-
-extraPeople.addEventListener('change',hitungTotal);
-extraTime.addEventListener('change',hitungTotal);
 
 function kirimWhatsApp(){
 
@@ -779,46 +644,28 @@ if(paket.includes("Engagement")) emoji = "💍";
 if(paket.includes("Akad")) emoji = "🤍";
 if(paket.includes("Khitanan")) emoji = "👦";
 if(paket.includes("Aqiqah")) emoji = "👶";
-if(paket.includes("Studio")) emoji = "📷";
 
 let total = totalHarga.innerText;
-
-let tambahan = "";
-
-if(selected.dataset.type){
-
-let orangText =
-extraPeople.options[extraPeople.selectedIndex].text;
-
-let waktuText =
-extraTime.options[extraTime.selectedIndex].text;
-
-tambahan =
-`\nTambahan Orang: ${orangText}
-Tambahan Waktu: ${waktuText}`;
-}
 
 let pesan = `Halo MasMotret 👋
 
 Saya ingin memesan:
-${emoji}${paket}
-${tambahan}
+${emoji} ${paket}
 
-💰Total Estimasi:
+💰 Total Estimasi:
 ${total}
 
 Mohon informasi lebih lanjut.
 
-Terima kasih 😁🙏.`;
+Terima kasih 😁🙏`;
 
 window.open(
-'https://wa.me/6285724129496?text='+
+'https://wa.me/6285724129496?text=' +
 encodeURIComponent(pesan),
 '_blank'
 );
 
 }
-
 
 </script>
 
